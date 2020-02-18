@@ -2,7 +2,7 @@ package com.service;
 
 import com.dao.ProductDao;
 
-public class ProductService {
+public class ProductService implements IProductService {
 	
 	ProductDao pd=new ProductDao();
 	public void addService(String key,String productId, double price, String colour, String dimension, String specification, String manufacturer, int quantity, int productCategory, String productName) {
@@ -19,7 +19,7 @@ public class ProductService {
 	}
 
 	public void updateQtt(String edi) {
-		pd.UpdateDao(edi);
+		pd.updateDao(edi);
 		
 	}
 

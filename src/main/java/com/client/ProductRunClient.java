@@ -12,14 +12,15 @@ public class ProductRunClient {
 	public static void main(String[] args) {
 		
 		ProductService ps=new ProductService();
-		ProductCollection pc = new ProductCollection();
 		ProductDTO pd=new ProductDTO();
 		
 		Scanner sc=new Scanner(System.in);
 		int choice;
 		
 		while(true) {
+			System.out.println("===============================================");
 			System.out.println("1.Add a new Product"+"\n"+"2.Edit an Existing Product"+"\n"+"3.Delete an Existing Product"+"\n"+"4.Display All Products Available in Store");
+			System.out.println("===============================================");
 			choice=sc.nextInt();
 			switch(choice){    //Main Switch of program choice
 			case 1:
@@ -50,6 +51,7 @@ public class ProductRunClient {
 				
 				System.out.println("Enter Price:");
 				pd.setPrice(sc.nextDouble());
+				
 				System.out.println("Enter Colour: ");
 				pd.setColour(sc.next());
 				System.out.println("Enter Dimensions String type: ");
@@ -60,8 +62,10 @@ public class ProductRunClient {
 				pd.setManufacturer(sc.next());
 				System.out.println("Enter quantity: ");
 				pd.setQuantity(sc.nextInt());
-				System.out.println("Enter product category number:");
+				
+				System.out.println("Enter product category number:(1-5)");
 				pd.setProductCategory(sc.nextInt());
+				
 				System.out.println("Enter producct name");
 				pd.setProductName(sc.next());
 							
@@ -95,7 +99,7 @@ public class ProductRunClient {
 						{
 						String productId=sc.next();
 						boolean b1 = Validation.validatedata(productId,Validation.productIdpattern);
-						if(b1 == true)
+						if(b1)
 						{
 							try 
 							{
@@ -165,6 +169,7 @@ public class ProductRunClient {
 				System.out.println("----Wrong Choice Entered----");
 				break;
 			}
+		
 		}
 	}
 

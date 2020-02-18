@@ -4,11 +4,14 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-class CollectionTest {
+import com.util.ProductCollection;
 
+class CollectionTest {
+	
+	ProductCollection pc=new ProductCollection();
 	@Test
-	void test() {
-		fail("Not yet implemented");
+	void testeditCollection() {
+		 assertTrue(pc.editCollection("watch"));
 	}
 
 }

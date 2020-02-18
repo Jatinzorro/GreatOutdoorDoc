@@ -5,7 +5,7 @@ import java.util.Scanner;
 import com.bean.ProductDTO;
 import com.util.ProductCollection;
 
-public class ProductDao {
+public class ProductDao implements IProductDao {
 	Scanner sc=new Scanner(System.in);
 	ProductCollection pc=new ProductCollection();
 	
@@ -27,7 +27,7 @@ public class ProductDao {
 		
 	}
 
-	public void UpdateDao(String edi) {   //it will only update the Quantity
+	public void updateDao(String edi) {   //it will only update the Quantity
 	int oldQtt=pc.updateCollection(edi).getQuantity();
 	System.out.println("Quantity of "+edi+" is "+oldQtt);
 	System.out.println("Now Enter new Quantity");
@@ -39,9 +39,12 @@ public class ProductDao {
 			pc.updateCollection(edi).getSpecification(),pc.updateCollection(edi).getManufacturer(), newQtt,pc.updateCollection(edi).getProductCategory(), pc.updateCollection(edi).getProductName());
 	}
 
+	
+	
 	public void displayProductDao() {
 		pc.displayCollection();
 		
 	}
+
 	
 }
